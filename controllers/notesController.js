@@ -13,6 +13,22 @@ const getAllNotes = asyncHandler(async (req, res) => {
 
     res.json(notes)
 })
+
+
+const getNote=asyncHandler(async (req, res) => {
+    
+    const user = req.params.id
+   
+    const notes = await Note.find({user}).lean().exec()
+  
+res.json(notes)
+
+
+
+
+})
+
+
 const createNewNote = async (req, res) => {
     const {user,notes} = req.body
 
@@ -45,5 +61,6 @@ const updatedNotes= await currentNotes.save()
 module.exports = {
    getAllNotes,
    createNewNote,
-   updateNote
+   updateNote,
+   getNote
 }

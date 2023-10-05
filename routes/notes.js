@@ -9,4 +9,6 @@ router.route('/')
     .get(notesController.getAllNotes)
     .post(notesController.createNewNote)
     .patch(notesController.updateNote)
+    router.route('/:id')   
+    .get(notesController.getNote)
 module.exports = router
