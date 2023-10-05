@@ -30,14 +30,14 @@ res.json(notes)
 
 
 const createNewNote = async (req, res) => {
-    const {user,date} = req.body
+    const {user} = req.body
 
     // Confirm data
-    if (!user || !date) {
+    if (!user) {
        return res.status(400).json({ message: 'All fields are required' })
     }
 
-       const notesObject ={user,date}
+       const notesObject ={user}
 
     // Create and store new questions 
     const newNotes = await Notes.create(notesObject)
