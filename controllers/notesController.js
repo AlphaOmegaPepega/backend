@@ -19,7 +19,7 @@ const getNote=asyncHandler(async (req, res) => {
     
     const user = req.params.id
    
-    const notes = await Note.find({user}).lean().exec()
+    const notes = await Notes.find({user}).lean().exec()
   
 res.json(notes)
 
@@ -51,7 +51,7 @@ const createNewNote = async (req, res) => {
 }
 const updateNote = asyncHandler(async (req, res) => {
 const {user,notes}=req.body
-const currentNotes = await Questions.find({user}).exec()
+const currentNotes = await Notes.find({user}).exec()
 currentNotes.notes=notes
 const updatedNotes= await currentNotes.save()
 
