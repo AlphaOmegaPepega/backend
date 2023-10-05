@@ -30,10 +30,10 @@ res.json(notes)
 
 
 const createNewNote = async (req, res) => {
-    const {user,notes} = req.body
+    const {user,date} = req.body
 
     // Confirm data
-    if (!user || !notes) {
+    if (!user || !date) {
        return res.status(400).json({ message: 'All fields are required' })
     }
 

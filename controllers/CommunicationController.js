@@ -72,6 +72,7 @@ const updatequestions = asyncHandler(async (req, res) => {
     }
     const question=questions[questions.length-1]
     question.Collaboration=Collaboration ? Collaboration : question.Collaboration
+    console.log(Collaboration)
     question.Communication=Communication ? Communication : question.Communication
     question.Quality=Quality ? Quality : question.Quality
     question.DecisionMaking=DecisionMaking ? DecisionMaking : question.DecisionMaking
