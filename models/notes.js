@@ -11,6 +11,12 @@ const notesSchema = new mongoose.Schema({
         
        
     }],
+    titles: [{
+        type: String,
+        
+       
+    }],
+
 })
 
 module.exports = mongoose.model('notes', notesSchema)

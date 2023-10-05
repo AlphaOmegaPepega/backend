@@ -50,11 +50,12 @@ const createNewNote = async (req, res) => {
    
 }
 const updateNote = asyncHandler(async (req, res) => {
-const {user,notes}=req.body
+const {user,notes,titles}=req.body
 const currentNotes = await Notes.findOne({user}).exec()
 console.log(currentNotes)
 console.log("________________________")
 currentNotes.notes=notes
+currentNotes.titles=titles
 console.log(currentNotes)
 const updatedNotes= await currentNotes.save()
 
