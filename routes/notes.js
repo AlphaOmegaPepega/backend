@@ -11,4 +11,5 @@ router.route('/')
     .patch(notesController.updateNote)
     router.route('/:id')   
     .get(notesController.getNote)
+    .delete(notesController.deleteNote)
 module.exports = router

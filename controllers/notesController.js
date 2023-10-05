@@ -51,16 +51,28 @@ const createNewNote = async (req, res) => {
 }
 const updateNote = asyncHandler(async (req, res) => {
 const {user,notes}=req.body
-const currentNotes = await Notes.find({user}).exec()
+const currentNotes = await Notes.findOne({user}).exec()
+console.log(currentNotes)
+console.log("________________________")
 currentNotes.notes=notes
+console.log(currentNotes)
 const updatedNotes= await currentNotes.save()
 
     res.json({ message: `updated` })
 
 })
+const deleteNote=asyncHandler(async(req,res)=>{
+    const user = req.params.id
+    const note = await Notes.find({user}).exec()
+    note.map(quest=>{
+        quest.deleteOne()
+    })
+    res.json({ message: `deleted` })
+})
 module.exports = {
    getAllNotes,
    createNewNote,
    updateNote,
-   getNote
+   getNote,
+   deleteNote
 }
