@@ -32,6 +32,7 @@ app.use('/Disscovery', require('./routes/Disscovery'))
 app.use('/IndustryKnwlg', require('./routes/IndustryKnwlg'))
 app.use('/Stakeholder', require('./routes/Stakeholder'))
 app.use('/Vision', require('./routes/Vision'))
+app.use('/notes', require('./routes/notes'))
 
 
 app.all('*', (req, res) => {
