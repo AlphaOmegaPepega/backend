@@ -20,8 +20,8 @@ const getNote=asyncHandler(async (req, res) => {
     const user = req.params.id
    
     const notes = await Notes.find({user}).lean().exec()
-  
-res.json(notes)
+    const note=notes[notes.length-1]
+res.json(note)
 
 
 
