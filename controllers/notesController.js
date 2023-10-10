@@ -62,7 +62,7 @@ currentNote.StackholderNotes= StackholderNotes ?  StackholderNotes : currentNote
 currentNote.VisionNotes= VisionNotes ?  VisionNotes : currentNote.VisionNotes
 
 
-const updatedNotes= await currentNotes.save()
+const updatedNotes= await currentNote.save()
 
     res.json({ message: `updated` })
 
