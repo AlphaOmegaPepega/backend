@@ -60,6 +60,7 @@ currentNote.DiscoveryNotes= DiscoveryNotes ?  DiscoveryNotes : currentNote.Disco
 currentNote.Synthesising= IndustryKnwlgNotes ?  IndustryKnwlgNotes : currentNote.IndustryKnwlgNotes
 currentNote.StackholderNotes= StackholderNotes ?  StackholderNotes : currentNote.StackholderNotes
 currentNote.VisionNotes= VisionNotes ?  VisionNotes : currentNote.VisionNotes
+currentNote.IndustryKnwlgNotes= IndustryKnwlgNotes ?  IndustryKnwlgNotes : currentNote.IndustryKnwlgNotes
 
 
 const updatedNotes= await currentNote.save()
