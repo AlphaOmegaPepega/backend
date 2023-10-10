@@ -6,16 +6,42 @@ const notesSchema = new mongoose.Schema({
         required: true,
         ref: 'users'
     },
-    notes: [{
+    PersonalNotes: [{
         type: String,
         
        
     }],
-    titles: [{
+    DeliveryNotes: [{
         type: String,
         
        
     }],
+    DesignNotes: [{
+        type: String,
+        
+       
+    }],
+    DiscoveryNotes: [{
+        type: String,
+        
+       
+    }],
+    IndustryKnwlgNotes: [{
+        type: String,
+        
+       
+    }],
+    StackholderNotes: [{
+        type: String,
+        
+       
+    }],
+    VisionNotes: [{
+        type: String,
+        
+       
+    }],
+  
 
 })
 

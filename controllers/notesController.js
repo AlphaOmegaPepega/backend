@@ -50,13 +50,18 @@ const createNewNote = async (req, res) => {
    
 }
 const updateNote = asyncHandler(async (req, res) => {
-const {user,notes,titles}=req.body
-const currentNotes = await Notes.findOne({user}).exec()
-console.log(currentNotes)
-console.log("________________________")
-currentNotes.notes=notes
-currentNotes.titles=titles
-console.log(currentNotes)
+const {user,PersonalNotes,DeliveryNotes,DesignNotes,DiscoveryNotes,IndustryKnwlgNotes,StackholderNotes,VisionNotes}=req.body
+const currentNotes = await Notes.find({user}).exec()
+const currentNote=currentNotes[currentNotes.length-1]
+currentNote.PersonalNotes=PersonalNotes ? PersonalNotes : currentNote.PersonalNotes
+currentNote.DeliveryNotes=DeliveryNotes ? DeliveryNotes : currentNote.DeliveryNotes
+currentNote.DesignNotes=DesignNotes ? DesignNotes : currentNote.DesignNotes
+currentNote.DiscoveryNotes= DiscoveryNotes ?  DiscoveryNotes : currentNote.DiscoveryNotes
+currentNote.Synthesising= IndustryKnwlgNotes ?  IndustryKnwlgNotes : currentNote.IndustryKnwlgNotes
+currentNote.StackholderNotes= StackholderNotes ?  StackholderNotes : currentNote.StackholderNotes
+currentNote.VisionNotes= VisionNotes ?  VisionNotes : currentNote.VisionNotes
+
+
 const updatedNotes= await currentNotes.save()
 
     res.json({ message: `updated` })
